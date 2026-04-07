@@ -1,23 +1,19 @@
 aid: ingram-micro
-url: 
-  https://raw.githubusercontent.com/api-evangelist/ingram-micro/refs/heads/main/apis.yml
+url: https://raw.githubusercontent.com/api-evangelist/ingram-micro/refs/heads/main/apis.yml
 apis:
   - aid: ingram-micro:reseller-api
     name: Ingram Micro Reseller API
     tags:
-      - IT Distribution
-      - Reseller
       - Catalog
-      - Pricing
+      - IT Distribution
       - Orders
-    image: 
-      https://kinlane-productions2.s3.amazonaws.com/apis-json/apis-json-logo.jpg
+      - Pricing
+      - Reseller
+    image: https://kinlane-productions2.s3.amazonaws.com/apis-json/apis-json-logo.jpg
     baseURL: https://api.ingrammicro.com
-    humanURL: 
-      https://developer.ingrammicro.com/reseller/api-documentation/United_States
+    humanURL: https://developer.ingrammicro.com/reseller/api-documentation/United_States
     properties:
-      - url: 
-          https://developer.ingrammicro.com/reseller/api-documentation/United_States
+      - url: https://developer.ingrammicro.com/reseller/api-documentation/United_States
         type: Documentation
       - url: openapi/ingram-micro-reseller-api-openapi.yml
         type: OpenAPI
@@ -29,12 +25,11 @@ apis:
   - aid: ingram-micro:vendor-api
     name: Ingram Micro Vendor API
     tags:
-      - IT Distribution
-      - Vendor
-      - Supply Chain
       - Inventory
-    image: 
-      https://kinlane-productions2.s3.amazonaws.com/apis-json/apis-json-logo.jpg
+      - IT Distribution
+      - Supply Chain
+      - Vendor
+    image: https://kinlane-productions2.s3.amazonaws.com/apis-json/apis-json-logo.jpg
     baseURL: https://api.ingrammicro.com
     humanURL: https://developer.ingrammicro.com/vendor/api-documentation
     properties:
