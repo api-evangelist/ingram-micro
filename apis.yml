@@ -1,5 +1,6 @@
 aid: ingram-micro
 url: https://raw.githubusercontent.com/api-evangelist/ingram-micro/refs/heads/main/apis.yml
+modified: '2026-04-28'
 apis:
   - aid: ingram-micro:reseller-api
     name: Ingram Micro Reseller API
