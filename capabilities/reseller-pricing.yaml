@@ -1,0 +1,77 @@
+naftiko: 1.0.0-alpha2
+info:
+  label: Ingram Micro Reseller API — Pricing
+  description: 'Ingram Micro Reseller API — Pricing. 1 operations. Lead operation: Get Pricing. Self-contained Naftiko capability
+    covering one Ingram Micro business surface.'
+  tags:
+  - Ingram Micro
+  - Pricing
+  created: '2026-05-19'
+  modified: '2026-05-19'
+binds:
+- namespace: env
+  keys:
+    INGRAM_MICRO_API_KEY: INGRAM_MICRO_API_KEY
+capability:
+  consumes:
+  - type: http
+    namespace: reseller-pricing
+    baseUri: https://api.ingrammicro.com/resellers/v6
+    description: Ingram Micro Reseller API — Pricing business capability. Self-contained, no shared references.
+    resources:
+    - name: pricing
+      path: /pricing
+      operations:
+      - name: getpricing
+        method: POST
+        description: Get Pricing
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: true
+  exposes:
+  - type: rest
+    namespace: reseller-pricing-rest
+    port: 8080
+    description: REST adapter for Ingram Micro Reseller API — Pricing. One Spectral-compliant resource per consumed operation,
+      prefixed with /v1.
+    resources:
+    - path: /v1/pricing
+      name: pricing
+      description: REST surface for pricing.
+      operations:
+      - method: POST
+        name: getpricing
+        description: Get Pricing
+        call: reseller-pricing.getpricing
+        with:
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+  - type: mcp
+    namespace: reseller-pricing-mcp
+    port: 9090
+    transport: http
+    description: MCP adapter for Ingram Micro Reseller API — Pricing. One tool per consumed operation, routed inline through
+      this capability's consumes block.
+    tools:
+    - name: get-pricing
+      description: Get Pricing
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: false
+      call: reseller-pricing.getpricing
+      with:
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.

@@ -1,0 +1,67 @@
+naftiko: 1.0.0-alpha2
+info:
+  label: Ingram Micro Vendor API — Orders
+  description: 'Ingram Micro Vendor API — Orders. 1 operations. Lead operation: Get Vendor Orders. Self-contained Naftiko
+    capability covering one Ingram Micro business surface.'
+  tags:
+  - Ingram Micro
+  - Orders
+  created: '2026-05-19'
+  modified: '2026-05-19'
+binds:
+- namespace: env
+  keys:
+    INGRAM_MICRO_API_KEY: INGRAM_MICRO_API_KEY
+capability:
+  consumes:
+  - type: http
+    namespace: vendor-orders
+    baseUri: https://api.ingrammicro.com/vendors/v1
+    description: Ingram Micro Vendor API — Orders business capability. Self-contained, no shared references.
+    resources:
+    - name: orders
+      path: /orders
+      operations:
+      - name: getvendororders
+        method: GET
+        description: Get Vendor Orders
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+  exposes:
+  - type: rest
+    namespace: vendor-orders-rest
+    port: 8080
+    description: REST adapter for Ingram Micro Vendor API — Orders. One Spectral-compliant resource per consumed operation,
+      prefixed with /v1.
+    resources:
+    - path: /v1/orders
+      name: orders
+      description: REST surface for orders.
+      operations:
+      - method: GET
+        name: getvendororders
+        description: Get Vendor Orders
+        call: vendor-orders.getvendororders
+        outputParameters:
+        - type: object
+          mapping: $.
+  - type: mcp
+    namespace: vendor-orders-mcp
+    port: 9090
+    transport: http
+    description: MCP adapter for Ingram Micro Vendor API — Orders. One tool per consumed operation, routed inline through
+      this capability's consumes block.
+    tools:
+    - name: get-vendor-orders
+      description: Get Vendor Orders
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: vendor-orders.getvendororders
+      outputParameters:
+      - type: object
+        mapping: $.

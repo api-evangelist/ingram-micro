@@ -1,0 +1,126 @@
+naftiko: 1.0.0-alpha2
+info:
+  label: Ingram Micro Reseller API — Catalog
+  description: 'Ingram Micro Reseller API — Catalog. 2 operations. Lead operation: Search Product Catalog. Self-contained
+    Naftiko capability covering one Ingram Micro business surface.'
+  tags:
+  - Ingram Micro
+  - Catalog
+  created: '2026-05-19'
+  modified: '2026-05-19'
+binds:
+- namespace: env
+  keys:
+    INGRAM_MICRO_API_KEY: INGRAM_MICRO_API_KEY
+capability:
+  consumes:
+  - type: http
+    namespace: reseller-catalog
+    baseUri: https://api.ingrammicro.com/resellers/v6
+    description: Ingram Micro Reseller API — Catalog business capability. Self-contained, no shared references.
+    resources:
+    - name: catalog
+      path: /catalog
+      operations:
+      - name: getcatalog
+        method: GET
+        description: Search Product Catalog
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: keyword
+          in: query
+          type: string
+        - name: category
+          in: query
+          type: string
+        - name: pageSize
+          in: query
+          type: integer
+    - name: catalog-ingramPartNumber
+      path: /catalog/{ingramPartNumber}
+      operations:
+      - name: getproductdetails
+        method: GET
+        description: Get Product Details
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: ingramPartNumber
+          in: path
+          type: string
+          required: true
+  exposes:
+  - type: rest
+    namespace: reseller-catalog-rest
+    port: 8080
+    description: REST adapter for Ingram Micro Reseller API — Catalog. One Spectral-compliant resource per consumed operation,
+      prefixed with /v1.
+    resources:
+    - path: /v1/catalog
+      name: catalog
+      description: REST surface for catalog.
+      operations:
+      - method: GET
+        name: getcatalog
+        description: Search Product Catalog
+        call: reseller-catalog.getcatalog
+        with:
+          keyword: rest.keyword
+          category: rest.category
+          pageSize: rest.pageSize
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/catalog/{ingrampartnumber}
+      name: catalog-ingrampartnumber
+      description: REST surface for catalog-ingramPartNumber.
+      operations:
+      - method: GET
+        name: getproductdetails
+        description: Get Product Details
+        call: reseller-catalog.getproductdetails
+        with:
+          ingramPartNumber: rest.ingramPartNumber
+        outputParameters:
+        - type: object
+          mapping: $.
+  - type: mcp
+    namespace: reseller-catalog-mcp
+    port: 9090
+    transport: http
+    description: MCP adapter for Ingram Micro Reseller API — Catalog. One tool per consumed operation, routed inline through
+      this capability's consumes block.
+    tools:
+    - name: search-product-catalog
+      description: Search Product Catalog
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: reseller-catalog.getcatalog
+      with:
+        keyword: tools.keyword
+        category: tools.category
+        pageSize: tools.pageSize
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: get-product-details
+      description: Get Product Details
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: reseller-catalog.getproductdetails
+      with:
+        ingramPartNumber: tools.ingramPartNumber
+      outputParameters:
+      - type: object
+        mapping: $.
