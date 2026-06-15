@@ -1,0 +1,264 @@
+{
+  "item": [
+    {
+      "id": "b3cc1594-b103-40f8-9bac-5375c3e3daa1",
+      "name": "Inventory",
+      "description": {
+        "content": "Inventory management operations",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "d1608051-70e9-45e6-aabf-9570ce6714f3",
+          "name": "Get Inventory",
+          "request": {
+            "name": "Get Inventory",
+            "description": {
+              "content": "Retrieve inventory levels across Ingram Micro warehouses.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "inventory"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "8ba14d37-7e25-41e4-8636-d10c5bacb24d",
+              "name": "Successful response",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "inventory"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"inventory\": [\n    {\n      \"partNumber\": \"string\",\n      \"warehouse\": \"string\",\n      \"quantity\": 3144,\n      \"lastUpdated\": \"2004-05-20T06:42:00.064Z\"\n    },\n    {\n      \"partNumber\": \"string\",\n      \"warehouse\": \"string\",\n      \"quantity\": 7557,\n      \"lastUpdated\": \"1978-09-30T00:23:12.067Z\"\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    },
+    {
+      "id": "cb1e8820-2cad-47b6-8754-abe4bd9bf4a2",
+      "name": "Orders",
+      "description": {
+        "content": "Order management operations",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "08c0c29b-c928-4ab1-96c7-fa0cad09c9a5",
+          "name": "Get Vendor Orders",
+          "request": {
+            "name": "Get Vendor Orders",
+            "description": {
+              "content": "Retrieve orders placed for vendor products.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "orders"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "a1956122-d194-4367-8ade-063e127a15e5",
+              "name": "Successful response",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "orders"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"orders\": [\n    {\n      \"orderId\": \"string\",\n      \"resellerId\": \"string\",\n      \"status\": \"string\",\n      \"lines\": [\n        {\n          \"partNumber\": \"string\",\n          \"quantity\": 6894\n        },\n        {\n          \"partNumber\": \"string\",\n          \"quantity\": 1649\n        }\n      ]\n    },\n    {\n      \"orderId\": \"string\",\n      \"resellerId\": \"string\",\n      \"status\": \"string\",\n      \"lines\": [\n        {\n          \"partNumber\": \"string\",\n          \"quantity\": 7914\n        },\n        {\n          \"partNumber\": \"string\",\n          \"quantity\": 5865\n        }\n      ]\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    },
+    {
+      "id": "f6f639b4-def5-418f-a248-9c7e015d7936",
+      "name": "Shipments",
+      "description": {
+        "content": "Shipment tracking operations",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "7743d834-73af-4906-a2b0-04314a33ae17",
+          "name": "Get Shipments",
+          "request": {
+            "name": "Get Shipments",
+            "description": {
+              "content": "Retrieve shipment information for vendor products.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "shipments"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "8ace8037-b2c3-44eb-9df3-045edd77eabf",
+              "name": "Successful response",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "shipments"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"shipments\": [\n    {\n      \"id\": \"string\",\n      \"orderId\": \"string\",\n      \"carrier\": \"string\",\n      \"trackingNumber\": \"string\",\n      \"status\": \"string\"\n    },\n    {\n      \"id\": \"string\",\n      \"orderId\": \"string\",\n      \"carrier\": \"string\",\n      \"trackingNumber\": \"string\",\n      \"status\": \"string\"\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://api.ingrammicro.com/vendors/v1",
+      "key": "baseUrl"
+    }
+  ],
+  "info": {
+    "_postman_id": "bfba11f8-e19d-4367-a83e-0841ee614f3b",
+    "name": "Ingram Micro Vendor API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "The Ingram Micro Vendor API provides REST API access for technology vendors to manage inventory, orders, and supply chain operations through Ingram Micro's distribution network.\n\nContact Support:\n Name: Ingram Micro",
+      "type": "text/plain"
+    }
+  }
+}

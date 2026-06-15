@@ -1,0 +1,511 @@
+{
+  "item": [
+    {
+      "id": "5b12faff-8506-42f1-90e7-2913fc30c266",
+      "name": "Catalog",
+      "description": {
+        "content": "Product catalog operations",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "3adc200f-ef22-4cda-845e-48fc5ca79728",
+          "name": "Search Product Catalog",
+          "request": {
+            "name": "Search Product Catalog",
+            "description": {
+              "content": "Search the Ingram Micro product catalog.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "catalog"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "keyword",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "category",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "pageSize",
+                  "value": "<integer>"
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "ae2af276-b3f4-4b1a-bc9a-5cbef8d013f9",
+              "name": "Successful response",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "catalog"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "keyword",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "category",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "pageSize",
+                      "value": "<integer>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"products\": [\n    {\n      \"ingramPartNumber\": \"string\",\n      \"vendorPartNumber\": \"string\",\n      \"description\": \"string\",\n      \"category\": \"string\",\n      \"vendorName\": \"string\",\n      \"upc\": \"string\",\n      \"availability\": {\n        \"available\": true,\n        \"totalAvailability\": 338\n      }\n    },\n    {\n      \"ingramPartNumber\": \"string\",\n      \"vendorPartNumber\": \"string\",\n      \"description\": \"string\",\n      \"category\": \"string\",\n      \"vendorName\": \"string\",\n      \"upc\": \"string\",\n      \"availability\": {\n        \"available\": true,\n        \"totalAvailability\": 1628\n      }\n    }\n  ],\n  \"totalCount\": 4279\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "593b283d-6895-4d10-be17-7bf1fc4f396d",
+          "name": "Get Product Details",
+          "request": {
+            "name": "Get Product Details",
+            "description": {
+              "content": "Get details for a specific product by Ingram part number.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "catalog",
+                ":ingramPartNumber"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "ingramPartNumber",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "dd13e36c-5bf1-4837-aa49-a1fba384a5a8",
+              "name": "Successful response",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "catalog",
+                    ":ingramPartNumber"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "ingramPartNumber",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"ingramPartNumber\": \"string\",\n  \"vendorPartNumber\": \"string\",\n  \"description\": \"string\",\n  \"category\": \"string\",\n  \"vendorName\": \"string\",\n  \"upc\": \"string\",\n  \"availability\": {\n    \"available\": true,\n    \"totalAvailability\": 8904\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    },
+    {
+      "id": "df511f7e-4888-44a1-915f-60ccb3d14d05",
+      "name": "Orders",
+      "description": {
+        "content": "Order management operations",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "ba508776-7cd6-4672-b550-9a38852c57e6",
+          "name": "Create Order",
+          "request": {
+            "name": "Create Order",
+            "description": {
+              "content": "Create a new order with Ingram Micro.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "orders"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"customerOrderNumber\": \"<string>\",\n  \"shipTo\": {\n    \"name\": \"<string>\",\n    \"address\": \"<string>\",\n    \"city\": \"<string>\",\n    \"state\": \"<string>\",\n    \"zip\": \"<string>\"\n  },\n  \"lines\": [\n    {\n      \"ingramPartNumber\": \"<string>\",\n      \"quantity\": \"<integer>\"\n    },\n    {\n      \"ingramPartNumber\": \"<string>\",\n      \"quantity\": \"<integer>\"\n    }\n  ]\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "5286e18c-2570-498d-8404-1efdad7e9a51",
+              "name": "Order created",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "orders"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"customerOrderNumber\": \"<string>\",\n  \"shipTo\": {\n    \"name\": \"<string>\",\n    \"address\": \"<string>\",\n    \"city\": \"<string>\",\n    \"state\": \"<string>\",\n    \"zip\": \"<string>\"\n  },\n  \"lines\": [\n    {\n      \"ingramPartNumber\": \"<string>\",\n      \"quantity\": \"<integer>\"\n    },\n    {\n      \"ingramPartNumber\": \"<string>\",\n      \"quantity\": \"<integer>\"\n    }\n  ]\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Created",
+              "code": 201,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"orderId\": \"string\",\n  \"status\": \"string\",\n  \"lines\": [\n    {\n      \"ingramPartNumber\": \"string\",\n      \"quantity\": 1315,\n      \"unitPrice\": 2867.386207775174\n    },\n    {\n      \"ingramPartNumber\": \"string\",\n      \"quantity\": 2927,\n      \"unitPrice\": 3001.9812852117657\n    }\n  ],\n  \"createdAt\": \"2010-05-16T17:29:26.540Z\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "182c36e7-b0f5-411b-bae4-c2876d093aea",
+          "name": "Get Order Status",
+          "request": {
+            "name": "Get Order Status",
+            "description": {
+              "content": "Retrieve the status of a specific order.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "orders",
+                ":orderId"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "orderId",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "e3bcfa67-c050-4f2a-aa98-41c7f0773318",
+              "name": "Successful response",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "orders",
+                    ":orderId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "orderId",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"orderId\": \"string\",\n  \"status\": \"string\",\n  \"lines\": [\n    {\n      \"ingramPartNumber\": \"string\",\n      \"quantity\": 1315,\n      \"unitPrice\": 2867.386207775174\n    },\n    {\n      \"ingramPartNumber\": \"string\",\n      \"quantity\": 2927,\n      \"unitPrice\": 3001.9812852117657\n    }\n  ],\n  \"createdAt\": \"2010-05-16T17:29:26.540Z\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    },
+    {
+      "id": "2307b63e-9061-4abc-8fd4-1c0469d6aa4e",
+      "name": "Pricing",
+      "description": {
+        "content": "Pricing and availability operations",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "d9c49c46-4e9a-449f-920f-cd967293a0d9",
+          "name": "Get Pricing",
+          "request": {
+            "name": "Get Pricing",
+            "description": {
+              "content": "Retrieve pricing and availability for products.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "pricing"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"products\": [\n    {\n      \"ingramPartNumber\": \"<string>\"\n    },\n    {\n      \"ingramPartNumber\": \"<string>\"\n    }\n  ]\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "8d2cd441-2af0-46c6-afdb-671ec2872c79",
+              "name": "Successful response",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "pricing"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"products\": [\n    {\n      \"ingramPartNumber\": \"<string>\"\n    },\n    {\n      \"ingramPartNumber\": \"<string>\"\n    }\n  ]\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"products\": [\n    {\n      \"ingramPartNumber\": \"string\",\n      \"retailPrice\": 2860.918084407044,\n      \"customerPrice\": 9741.401127485628,\n      \"availability\": false\n    },\n    {\n      \"ingramPartNumber\": \"string\",\n      \"retailPrice\": 688.633901157345,\n      \"customerPrice\": 527.7153147007363,\n      \"availability\": false\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://api.ingrammicro.com/resellers/v6",
+      "key": "baseUrl"
+    }
+  ],
+  "info": {
+    "_postman_id": "0bc23312-7afb-4e2c-a149-5b298c65e704",
+    "name": "Ingram Micro Reseller API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "The Ingram Micro Reseller API provides REST API access to product catalog, pricing, discounts, stock levels, and order management for IT resellers.\n\nContact Support:\n Name: Ingram Micro",
+      "type": "text/plain"
+    }
+  }
+}

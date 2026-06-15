@@ -1,0 +1,128 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Ingram Micro Reseller API",
+    "version": "1.0.0"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Catalog",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Search Product Catalog",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.ingrammicro.com/resellers/v6/catalog",
+            "params": [
+              {
+                "name": "keyword",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "category",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "pageSize",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Search the Ingram Micro product catalog."
+        },
+        {
+          "info": {
+            "name": "Get Product Details",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.ingrammicro.com/resellers/v6/catalog/:ingramPartNumber",
+            "params": [
+              {
+                "name": "ingramPartNumber",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Get details for a specific product by Ingram part number."
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "Orders",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Create Order",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.ingrammicro.com/resellers/v6/orders",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Create a new order with Ingram Micro."
+        },
+        {
+          "info": {
+            "name": "Get Order Status",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.ingrammicro.com/resellers/v6/orders/:orderId",
+            "params": [
+              {
+                "name": "orderId",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Retrieve the status of a specific order."
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "Pricing",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Get Pricing",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.ingrammicro.com/resellers/v6/pricing",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Retrieve pricing and availability for products."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

@@ -1,0 +1,67 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Ingram Micro Vendor API",
+    "version": "1.0.0"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Inventory",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Get Inventory",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.ingrammicro.com/vendors/v1/inventory"
+          },
+          "docs": "Retrieve inventory levels across Ingram Micro warehouses."
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "Orders",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Get Vendor Orders",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.ingrammicro.com/vendors/v1/orders"
+          },
+          "docs": "Retrieve orders placed for vendor products."
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "Shipments",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Get Shipments",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.ingrammicro.com/vendors/v1/shipments"
+          },
+          "docs": "Retrieve shipment information for vendor products."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}
