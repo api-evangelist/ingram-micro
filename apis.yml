@@ -17,7 +17,7 @@ apis:
       - Orders
       - Pricing
       - Reseller
-    image: https://kinlane-productions2.s3.amazonaws.com/apis-json/apis-json-logo.jpg
+    image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
     baseURL: https://api.ingrammicro.com
     humanURL: https://developer.ingrammicro.com/reseller/api-documentation/United_States
     properties:
@@ -36,7 +36,7 @@ apis:
       - IT Distribution
       - Supply Chain
       - Vendor
-    image: https://kinlane-productions2.s3.amazonaws.com/apis-json/apis-json-logo.jpg
+    image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
     baseURL: https://api.ingrammicro.com
     humanURL: https://developer.ingrammicro.com/vendor/api-documentation
     properties:
