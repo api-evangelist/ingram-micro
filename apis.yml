@@ -4,6 +4,8 @@ tags:
 url: https://raw.githubusercontent.com/api-evangelist/ingram-micro/refs/heads/main/apis.yml
 modified: '2026-05-19'
 common:
+  - type: AgenticAccess
+    url: agentic-access/ingram-micro-agentic-access.yml
   - type: DomainSecurity
     url: security/ingram-micro-domain-security.yml
   - type: GitHubOrganization
