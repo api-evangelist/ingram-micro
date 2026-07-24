@@ -1,0 +1,50 @@
+openapi: 3.1.0
+info:
+  title: Ingram Micro Reseller Catalog Inventory API
+  description: The Ingram Micro Reseller API provides REST API access to product catalog, pricing, discounts, stock levels, and order management for IT resellers.
+  version: 1.0.0
+  contact:
+    name: Ingram Micro
+    url: https://developer.ingrammicro.com/
+servers:
+- url: https://api.ingrammicro.com/resellers/v6
+  description: Production
+tags:
+- name: Inventory
+  description: Inventory management operations
+paths:
+  /inventory:
+    get:
+      operationId: getInventory
+      summary: Get Inventory
+      description: Retrieve inventory levels across Ingram Micro warehouses.
+      tags:
+      - Inventory
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/InventoryList'
+components:
+  schemas:
+    InventoryList:
+      type: object
+      properties:
+        inventory:
+          type: array
+          items:
+            $ref: '#/components/schemas/InventoryItem'
+    InventoryItem:
+      type: object
+      properties:
+        partNumber:
+          type: string
+        warehouse:
+          type: string
+        quantity:
+          type: integer
+        lastUpdated:
+          type: string
+          format: date-time

@@ -1,0 +1,143 @@
+openapi: 3.1.0
+info:
+  title: Ingram Micro Reseller Catalog Orders API
+  description: The Ingram Micro Reseller API provides REST API access to product catalog, pricing, discounts, stock levels, and order management for IT resellers.
+  version: 1.0.0
+  contact:
+    name: Ingram Micro
+    url: https://developer.ingrammicro.com/
+servers:
+- url: https://api.ingrammicro.com/resellers/v6
+  description: Production
+tags:
+- name: Orders
+  description: Order management operations
+paths:
+  /orders:
+    post:
+      operationId: createOrder
+      summary: Create Order
+      description: Create a new order with Ingram Micro.
+      tags:
+      - Orders
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/OrderRequest'
+      responses:
+        '201':
+          description: Order created
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Order'
+    get:
+      operationId: getVendorOrders
+      summary: Get Vendor Orders
+      description: Retrieve orders placed for vendor products.
+      tags:
+      - Orders
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/VendorOrderList'
+  /orders/{orderId}:
+    get:
+      operationId: getOrderStatus
+      summary: Get Order Status
+      description: Retrieve the status of a specific order.
+      tags:
+      - Orders
+      parameters:
+      - name: orderId
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Order'
+components:
+  schemas:
+    VendorOrderList:
+      type: object
+      properties:
+        orders:
+          type: array
+          items:
+            $ref: '#/components/schemas/VendorOrder'
+    VendorOrder:
+      type: object
+      properties:
+        orderId:
+          type: string
+        resellerId:
+          type: string
+        status:
+          type: string
+        lines:
+          type: array
+          items:
+            type: object
+            properties:
+              partNumber:
+                type: string
+              quantity:
+                type: integer
+    OrderRequest:
+      type: object
+      properties:
+        customerOrderNumber:
+          type: string
+        shipTo:
+          type: object
+          properties:
+            name:
+              type: string
+            address:
+              type: string
+            city:
+              type: string
+            state:
+              type: string
+            zip:
+              type: string
+        lines:
+          type: array
+          items:
+            type: object
+            properties:
+              ingramPartNumber:
+                type: string
+              quantity:
+                type: integer
+    Order:
+      type: object
+      properties:
+        orderId:
+          type: string
+        status:
+          type: string
+        lines:
+          type: array
+          items:
+            type: object
+            properties:
+              ingramPartNumber:
+                type: string
+              quantity:
+                type: integer
+              unitPrice:
+                type: number
+        createdAt:
+          type: string
+          format: date-time
