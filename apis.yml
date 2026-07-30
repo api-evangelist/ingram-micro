@@ -1,4 +1,17 @@
 aid: ingram-micro
+accessModel:
+  pricing: freemium
+  onboarding: unknown
+  trial: false
+  try_now: false
+  public: false
+  label: Freemium
+  confidence: medium
+  source:
+  - plans
+  generated: '2026-07-22'
+  method: derived
+image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/icons/ingram-micro.png
 tags:
   - Fortune 100
 url: https://raw.githubusercontent.com/api-evangelist/ingram-micro/refs/heads/main/apis.yml
@@ -13,42 +26,74 @@ common:
   - type: LinkedIn
     url: https://www.linkedin.com/company/ingram-micro
 apis:
-  - aid: ingram-micro:reseller-api
-    name: Ingram Micro Reseller API
-    tags:
-      - Catalog
-      - IT Distribution
-      - Orders
-      - Pricing
-      - Reseller
-    image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
-    baseURL: https://api.ingrammicro.com
-    humanURL: https://developer.ingrammicro.com/reseller/api-documentation/United_States
-    properties:
-      - url: https://developer.ingrammicro.com/reseller/api-documentation/United_States
-        type: Documentation
-      - url: openapi/ingram-micro-reseller-api-openapi.yml
-        type: OpenAPI
-    description: >-
-      The Ingram Micro Reseller API provides REST API access to product catalog, pricing, discounts, stock levels, order
-      management, and order status for IT resellers. It uses OAuth 2.0 authentication and provides a sandbox environment
-      for testing.
-  - aid: ingram-micro:vendor-api
-    name: Ingram Micro Vendor API
-    tags:
-      - Inventory
-      - IT Distribution
-      - Supply Chain
-      - Vendor
-    image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
-    baseURL: https://api.ingrammicro.com
-    humanURL: https://developer.ingrammicro.com/vendor/api-documentation
-    properties:
-      - url: https://developer.ingrammicro.com/vendor/api-documentation
-        type: Documentation
-      - url: openapi/ingram-micro-vendor-api-openapi.yml
-        type: OpenAPI
-    description: >-
-      The Ingram Micro Vendor API provides REST API access for technology vendors to scale their business through Ingram
-      Micro's distribution network, with access to inventory management, order processing, and supply chain integration.
+- aid: ingram-micro:ingram-micro-catalog-api
+  name: ingram-micro Catalog API
+  description: Product catalog operations
+  humanURL: https://developer.ingrammicro.com/reseller/api-documentation/United_States
+  baseURL: https://api.ingrammicro.com
+  tags:
+  - Catalog
+  properties:
+  - type: OpenAPI
+    url: openapi/ingram-micro-catalog-api-openapi.yml
+  - type: Documentation
+    url: https://developer.ingrammicro.com/reseller/api-documentation/United_States
+  - type: Documentation
+    url: https://developer.ingrammicro.com/vendor/api-documentation
+- aid: ingram-micro:ingram-micro-inventory-api
+  name: ingram-micro Inventory API
+  description: Inventory management operations
+  humanURL: https://developer.ingrammicro.com/reseller/api-documentation/United_States
+  baseURL: https://api.ingrammicro.com
+  tags:
+  - Inventory
+  properties:
+  - type: OpenAPI
+    url: openapi/ingram-micro-inventory-api-openapi.yml
+  - type: Documentation
+    url: https://developer.ingrammicro.com/reseller/api-documentation/United_States
+  - type: Documentation
+    url: https://developer.ingrammicro.com/vendor/api-documentation
+- aid: ingram-micro:ingram-micro-orders-api
+  name: ingram-micro Orders API
+  description: Order management operations
+  humanURL: https://developer.ingrammicro.com/reseller/api-documentation/United_States
+  baseURL: https://api.ingrammicro.com
+  tags:
+  - Orders
+  properties:
+  - type: OpenAPI
+    url: openapi/ingram-micro-orders-api-openapi.yml
+  - type: Documentation
+    url: https://developer.ingrammicro.com/reseller/api-documentation/United_States
+  - type: Documentation
+    url: https://developer.ingrammicro.com/vendor/api-documentation
+- aid: ingram-micro:ingram-micro-pricing-api
+  name: ingram-micro Pricing API
+  description: Pricing and availability operations
+  humanURL: https://developer.ingrammicro.com/reseller/api-documentation/United_States
+  baseURL: https://api.ingrammicro.com
+  tags:
+  - Pricing
+  properties:
+  - type: OpenAPI
+    url: openapi/ingram-micro-pricing-api-openapi.yml
+  - type: Documentation
+    url: https://developer.ingrammicro.com/reseller/api-documentation/United_States
+  - type: Documentation
+    url: https://developer.ingrammicro.com/vendor/api-documentation
+- aid: ingram-micro:ingram-micro-shipments-api
+  name: ingram-micro Shipments API
+  description: Shipment tracking operations
+  humanURL: https://developer.ingrammicro.com/reseller/api-documentation/United_States
+  baseURL: https://api.ingrammicro.com
+  tags:
+  - Shipments
+  properties:
+  - type: OpenAPI
+    url: openapi/ingram-micro-shipments-api-openapi.yml
+  - type: Documentation
+    url: https://developer.ingrammicro.com/reseller/api-documentation/United_States
+  - type: Documentation
+    url: https://developer.ingrammicro.com/vendor/api-documentation
 description: © 2025 - All Rights Reserved. Ingram Micro Inc. - Privacy Policy | Terms of Use.
