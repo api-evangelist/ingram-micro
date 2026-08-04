@@ -1,0 +1,235 @@
+openapi: 3.1.0
+info:
+  title: Ingram Micro Reseller API
+  description: >-
+    The Ingram Micro Reseller API provides REST API access to product catalog,
+    pricing, discounts, stock levels, and order management for IT resellers.
+  version: 1.0.0
+  contact:
+    name: Ingram Micro
+    url: https://developer.ingrammicro.com/
+servers:
+  - url: https://api.ingrammicro.com/resellers/v6
+    description: Production
+paths:
+  /catalog:
+    get:
+      operationId: getCatalog
+      summary: Search Product Catalog
+      description: Search the Ingram Micro product catalog.
+      tags:
+        - Catalog
+      parameters:
+        - name: keyword
+          in: query
+          schema:
+            type: string
+        - name: category
+          in: query
+          schema:
+            type: string
+        - name: pageSize
+          in: query
+          schema:
+            type: integer
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ProductCatalog'
+  /catalog/{ingramPartNumber}:
+    get:
+      operationId: getProductDetails
+      summary: Get Product Details
+      description: Get details for a specific product by Ingram part number.
+      tags:
+        - Catalog
+      parameters:
+        - name: ingramPartNumber
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Product'
+  /orders:
+    post:
+      operationId: createOrder
+      summary: Create Order
+      description: Create a new order with Ingram Micro.
+      tags:
+        - Orders
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/OrderRequest'
+      responses:
+        '201':
+          description: Order created
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Order'
+  /orders/{orderId}:
+    get:
+      operationId: getOrderStatus
+      summary: Get Order Status
+      description: Retrieve the status of a specific order.
+      tags:
+        - Orders
+      parameters:
+        - name: orderId
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Order'
+  /pricing:
+    post:
+      operationId: getPricing
+      summary: Get Pricing
+      description: Retrieve pricing and availability for products.
+      tags:
+        - Pricing
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/PricingRequest'
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/PricingResponse'
+tags:
+  - name: Catalog
+    description: Product catalog operations
+  - name: Orders
+    description: Order management operations
+  - name: Pricing
+    description: Pricing and availability operations
+components:
+  schemas:
+    Product:
+      type: object
+      properties:
+        ingramPartNumber:
+          type: string
+        vendorPartNumber:
+          type: string
+        description:
+          type: string
+        category:
+          type: string
+        vendorName:
+          type: string
+        upc:
+          type: string
+        availability:
+          type: object
+          properties:
+            available:
+              type: boolean
+            totalAvailability:
+              type: integer
+    ProductCatalog:
+      type: object
+      properties:
+        products:
+          type: array
+          items:
+            $ref: '#/components/schemas/Product'
+        totalCount:
+          type: integer
+    Order:
+      type: object
+      properties:
+        orderId:
+          type: string
+        status:
+          type: string
+        lines:
+          type: array
+          items:
+            type: object
+            properties:
+              ingramPartNumber:
+                type: string
+              quantity:
+                type: integer
+              unitPrice:
+                type: number
+        createdAt:
+          type: string
+          format: date-time
+    OrderRequest:
+      type: object
+      properties:
+        customerOrderNumber:
+          type: string
+        shipTo:
+          type: object
+          properties:
+            name:
+              type: string
+            address:
+              type: string
+            city:
+              type: string
+            state:
+              type: string
+            zip:
+              type: string
+        lines:
+          type: array
+          items:
+            type: object
+            properties:
+              ingramPartNumber:
+                type: string
+              quantity:
+                type: integer
+    PricingRequest:
+      type: object
+      properties:
+        products:
+          type: array
+          items:
+            type: object
+            properties:
+              ingramPartNumber:
+                type: string
+    PricingResponse:
+      type: object
+      properties:
+        products:
+          type: array
+          items:
+            type: object
+            properties:
+              ingramPartNumber:
+                type: string
+              retailPrice:
+                type: number
+              customerPrice:
+                type: number
+              availability:
+                type: boolean

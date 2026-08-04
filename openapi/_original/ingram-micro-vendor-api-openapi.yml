@@ -1,0 +1,130 @@
+openapi: 3.1.0
+info:
+  title: Ingram Micro Vendor API
+  description: >-
+    The Ingram Micro Vendor API provides REST API access for technology vendors
+    to manage inventory, orders, and supply chain operations through Ingram
+    Micro's distribution network.
+  version: 1.0.0
+  contact:
+    name: Ingram Micro
+    url: https://developer.ingrammicro.com/
+servers:
+  - url: https://api.ingrammicro.com/vendors/v1
+    description: Production
+paths:
+  /inventory:
+    get:
+      operationId: getInventory
+      summary: Get Inventory
+      description: Retrieve inventory levels across Ingram Micro warehouses.
+      tags:
+        - Inventory
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/InventoryList'
+  /orders:
+    get:
+      operationId: getVendorOrders
+      summary: Get Vendor Orders
+      description: Retrieve orders placed for vendor products.
+      tags:
+        - Orders
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/VendorOrderList'
+  /shipments:
+    get:
+      operationId: getShipments
+      summary: Get Shipments
+      description: Retrieve shipment information for vendor products.
+      tags:
+        - Shipments
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ShipmentList'
+tags:
+  - name: Inventory
+    description: Inventory management operations
+  - name: Orders
+    description: Order management operations
+  - name: Shipments
+    description: Shipment tracking operations
+components:
+  schemas:
+    InventoryItem:
+      type: object
+      properties:
+        partNumber:
+          type: string
+        warehouse:
+          type: string
+        quantity:
+          type: integer
+        lastUpdated:
+          type: string
+          format: date-time
+    InventoryList:
+      type: object
+      properties:
+        inventory:
+          type: array
+          items:
+            $ref: '#/components/schemas/InventoryItem'
+    VendorOrder:
+      type: object
+      properties:
+        orderId:
+          type: string
+        resellerId:
+          type: string
+        status:
+          type: string
+        lines:
+          type: array
+          items:
+            type: object
+            properties:
+              partNumber:
+                type: string
+              quantity:
+                type: integer
+    VendorOrderList:
+      type: object
+      properties:
+        orders:
+          type: array
+          items:
+            $ref: '#/components/schemas/VendorOrder'
+    Shipment:
+      type: object
+      properties:
+        id:
+          type: string
+        orderId:
+          type: string
+        carrier:
+          type: string
+        trackingNumber:
+          type: string
+        status:
+          type: string
+    ShipmentList:
+      type: object
+      properties:
+        shipments:
+          type: array
+          items:
+            $ref: '#/components/schemas/Shipment'

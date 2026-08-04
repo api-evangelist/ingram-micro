@@ -1,0 +1,22 @@
+{
+  "provider": "ingram-micro",
+  "sources": [
+    "ingram-micro-catalog-api-openapi.yml",
+    "ingram-micro-inventory-api-openapi.yml",
+    "ingram-micro-orders-api-openapi.yml",
+    "ingram-micro-pricing-api-openapi.yml",
+    "ingram-micro-shipments-api-openapi.yml"
+  ],
+  "outputs": [
+    "ingram-micro-catalog-api-openapi.yml",
+    "ingram-micro-inventory-api-openapi.yml",
+    "ingram-micro-orders-api-openapi.yml",
+    "ingram-micro-pricing-api-openapi.yml",
+    "ingram-micro-shipments-api-openapi.yml"
+  ],
+  "archived": [],
+  "errors": [],
+  "warnings": [],
+  "notes": [],
+  "skipped": []
+}
