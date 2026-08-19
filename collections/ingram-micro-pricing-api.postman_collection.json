@@ -1,0 +1,123 @@
+{
+  "item": [
+    {
+      "id": "208e0609-3bc1-442c-8c76-b3b59bfc76e8",
+      "name": "Pricing",
+      "description": {
+        "content": "Pricing and availability operations",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "67180ddd-0ffc-4a54-843a-639c4fb9d46b",
+          "name": "Get Pricing",
+          "request": {
+            "name": "Get Pricing",
+            "description": {
+              "content": "Retrieve pricing and availability for products.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "pricing"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"products\": [\n    {\n      \"ingramPartNumber\": \"<string>\"\n    },\n    {\n      \"ingramPartNumber\": \"<string>\"\n    }\n  ]\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "13c80893-c806-4a8e-a550-342100284b30",
+              "name": "Successful response",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "pricing"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"products\": [\n    {\n      \"ingramPartNumber\": \"<string>\"\n    },\n    {\n      \"ingramPartNumber\": \"<string>\"\n    }\n  ]\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"products\": [\n    {\n      \"ingramPartNumber\": \"string\",\n      \"retailPrice\": 8249.271196265952,\n      \"customerPrice\": 5489.503023726583,\n      \"availability\": true\n    },\n    {\n      \"ingramPartNumber\": \"string\",\n      \"retailPrice\": 6147.156531535466,\n      \"customerPrice\": 5633.890719835211,\n      \"availability\": true\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://api.ingrammicro.com/resellers/v6",
+      "key": "baseUrl"
+    }
+  ],
+  "info": {
+    "_postman_id": "f3c4d28d-b77e-4d2d-bf29-79dc750c8e74",
+    "name": "Ingram Micro Reseller Catalog Pricing API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "The Ingram Micro Reseller API provides REST API access to product catalog, pricing, discounts, stock levels, and order management for IT resellers.\n\nContact Support:\n Name: Ingram Micro",
+      "type": "text/plain"
+    }
+  }
+}

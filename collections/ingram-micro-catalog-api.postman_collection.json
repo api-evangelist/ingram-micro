@@ -1,0 +1,219 @@
+{
+  "item": [
+    {
+      "id": "89c259d2-99dd-4456-8345-e4ae870179c7",
+      "name": "Catalog",
+      "description": {
+        "content": "Product catalog operations",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "326bdfab-e153-46d9-903f-b004442b060c",
+          "name": "Search Product Catalog",
+          "request": {
+            "name": "Search Product Catalog",
+            "description": {
+              "content": "Search the Ingram Micro product catalog.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "catalog"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "keyword",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "category",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "pageSize",
+                  "value": "<integer>"
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "3003e02a-e684-4be3-ab94-dd58ba313942",
+              "name": "Successful response",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "catalog"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "keyword",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "category",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "pageSize",
+                      "value": "<integer>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"products\": [\n    {\n      \"ingramPartNumber\": \"string\",\n      \"vendorPartNumber\": \"string\",\n      \"description\": \"string\",\n      \"category\": \"string\",\n      \"vendorName\": \"string\",\n      \"upc\": \"string\",\n      \"availability\": {\n        \"available\": false,\n        \"totalAvailability\": 9305\n      }\n    },\n    {\n      \"ingramPartNumber\": \"string\",\n      \"vendorPartNumber\": \"string\",\n      \"description\": \"string\",\n      \"category\": \"string\",\n      \"vendorName\": \"string\",\n      \"upc\": \"string\",\n      \"availability\": {\n        \"available\": true,\n        \"totalAvailability\": 625\n      }\n    }\n  ],\n  \"totalCount\": 345\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "47d4dccd-38b9-4eff-8553-c4e312050031",
+          "name": "Get Product Details",
+          "request": {
+            "name": "Get Product Details",
+            "description": {
+              "content": "Get details for a specific product by Ingram part number.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "catalog",
+                ":ingramPartNumber"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "ingramPartNumber",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "e8ae78c8-0cde-4811-acca-514534c62b82",
+              "name": "Successful response",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "catalog",
+                    ":ingramPartNumber"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "ingramPartNumber",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"ingramPartNumber\": \"string\",\n  \"vendorPartNumber\": \"string\",\n  \"description\": \"string\",\n  \"category\": \"string\",\n  \"vendorName\": \"string\",\n  \"upc\": \"string\",\n  \"availability\": {\n    \"available\": false,\n    \"totalAvailability\": 6532\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://api.ingrammicro.com/resellers/v6",
+      "key": "baseUrl"
+    }
+  ],
+  "info": {
+    "_postman_id": "d50a7597-7273-4bec-b1fb-5c880c9438a5",
+    "name": "Ingram Micro Reseller Catalog API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "The Ingram Micro Reseller API provides REST API access to product catalog, pricing, discounts, stock levels, and order management for IT resellers.\n\nContact Support:\n Name: Ingram Micro",
+      "type": "text/plain"
+    }
+  }
+}

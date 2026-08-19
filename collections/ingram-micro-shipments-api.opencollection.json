@@ -1,0 +1,29 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Ingram Micro Reseller Catalog Shipments API",
+    "version": "1.0.0"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Shipments",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Get Shipments",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.ingrammicro.com/resellers/v6/shipments"
+          },
+          "docs": "Retrieve shipment information for vendor products."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

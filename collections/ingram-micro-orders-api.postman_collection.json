@@ -1,0 +1,281 @@
+{
+  "item": [
+    {
+      "id": "c37ab234-ece8-4688-902a-0a1d79001cab",
+      "name": "Orders",
+      "description": {
+        "content": "Order management operations",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "c450150f-b2a2-4637-b468-a9ea55d0124d",
+          "name": "Create Order",
+          "request": {
+            "name": "Create Order",
+            "description": {
+              "content": "Create a new order with Ingram Micro.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "orders"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"customerOrderNumber\": \"<string>\",\n  \"shipTo\": {\n    \"name\": \"<string>\",\n    \"address\": \"<string>\",\n    \"city\": \"<string>\",\n    \"state\": \"<string>\",\n    \"zip\": \"<string>\"\n  },\n  \"lines\": [\n    {\n      \"ingramPartNumber\": \"<string>\",\n      \"quantity\": \"<integer>\"\n    },\n    {\n      \"ingramPartNumber\": \"<string>\",\n      \"quantity\": \"<integer>\"\n    }\n  ]\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "da7a8260-178a-46fa-9782-92cb64f11490",
+              "name": "Order created",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "orders"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"customerOrderNumber\": \"<string>\",\n  \"shipTo\": {\n    \"name\": \"<string>\",\n    \"address\": \"<string>\",\n    \"city\": \"<string>\",\n    \"state\": \"<string>\",\n    \"zip\": \"<string>\"\n  },\n  \"lines\": [\n    {\n      \"ingramPartNumber\": \"<string>\",\n      \"quantity\": \"<integer>\"\n    },\n    {\n      \"ingramPartNumber\": \"<string>\",\n      \"quantity\": \"<integer>\"\n    }\n  ]\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Created",
+              "code": 201,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"orderId\": \"string\",\n  \"status\": \"string\",\n  \"lines\": [\n    {\n      \"ingramPartNumber\": \"string\",\n      \"quantity\": 8356,\n      \"unitPrice\": 7356.991519742271\n    },\n    {\n      \"ingramPartNumber\": \"string\",\n      \"quantity\": 3419,\n      \"unitPrice\": 2052.141515574706\n    }\n  ],\n  \"createdAt\": \"1981-10-15T17:33:15.173Z\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "eb5c4c9d-2e8c-4d09-b257-df4bc2135a99",
+          "name": "Get Vendor Orders",
+          "request": {
+            "name": "Get Vendor Orders",
+            "description": {
+              "content": "Retrieve orders placed for vendor products.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "orders"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "e1b22dc7-6b71-4108-b64f-19aa359aa0d0",
+              "name": "Successful response",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "orders"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"orders\": [\n    {\n      \"orderId\": \"string\",\n      \"resellerId\": \"string\",\n      \"status\": \"string\",\n      \"lines\": [\n        {\n          \"partNumber\": \"string\",\n          \"quantity\": 6255\n        },\n        {\n          \"partNumber\": \"string\",\n          \"quantity\": 1159\n        }\n      ]\n    },\n    {\n      \"orderId\": \"string\",\n      \"resellerId\": \"string\",\n      \"status\": \"string\",\n      \"lines\": [\n        {\n          \"partNumber\": \"string\",\n          \"quantity\": 3413\n        },\n        {\n          \"partNumber\": \"string\",\n          \"quantity\": 310\n        }\n      ]\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "2e24d9e4-ebca-4d42-98cf-3fdc0f828fd9",
+          "name": "Get Order Status",
+          "request": {
+            "name": "Get Order Status",
+            "description": {
+              "content": "Retrieve the status of a specific order.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "orders",
+                ":orderId"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "orderId",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "6912ca4a-de74-44f1-bfa8-bb25611e541c",
+              "name": "Successful response",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "orders",
+                    ":orderId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "orderId",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"orderId\": \"string\",\n  \"status\": \"string\",\n  \"lines\": [\n    {\n      \"ingramPartNumber\": \"string\",\n      \"quantity\": 8356,\n      \"unitPrice\": 7356.991519742271\n    },\n    {\n      \"ingramPartNumber\": \"string\",\n      \"quantity\": 3419,\n      \"unitPrice\": 2052.141515574706\n    }\n  ],\n  \"createdAt\": \"1981-10-15T17:33:15.173Z\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://api.ingrammicro.com/resellers/v6",
+      "key": "baseUrl"
+    }
+  ],
+  "info": {
+    "_postman_id": "269ddd9c-4e42-4ab3-9b04-61aad2b85089",
+    "name": "Ingram Micro Reseller Catalog Orders API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "The Ingram Micro Reseller API provides REST API access to product catalog, pricing, discounts, stock levels, and order management for IT resellers.\n\nContact Support:\n Name: Ingram Micro",
+      "type": "text/plain"
+    }
+  }
+}

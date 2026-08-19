@@ -1,0 +1,62 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Ingram Micro Reseller Catalog Orders API",
+    "version": "1.0.0"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Orders",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Get Vendor Orders",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.ingrammicro.com/resellers/v6/orders"
+          },
+          "docs": "Retrieve orders placed for vendor products."
+        },
+        {
+          "info": {
+            "name": "Create Order",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.ingrammicro.com/resellers/v6/orders",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Create a new order with Ingram Micro."
+        },
+        {
+          "info": {
+            "name": "Get Order Status",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.ingrammicro.com/resellers/v6/orders/:orderId",
+            "params": [
+              {
+                "name": "orderId",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Retrieve the status of a specific order."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

@@ -1,0 +1,102 @@
+{
+  "item": [
+    {
+      "id": "dd8b45be-0ea5-409c-95dd-34e392ef345b",
+      "name": "Shipments",
+      "description": {
+        "content": "Shipment tracking operations",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "fa1013b1-16d5-4be6-b13d-485054edd2f2",
+          "name": "Get Shipments",
+          "request": {
+            "name": "Get Shipments",
+            "description": {
+              "content": "Retrieve shipment information for vendor products.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "shipments"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "402e5369-be8a-4528-98a1-b14b90ab2a3b",
+              "name": "Successful response",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "shipments"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"shipments\": [\n    {\n      \"id\": \"string\",\n      \"orderId\": \"string\",\n      \"carrier\": \"string\",\n      \"trackingNumber\": \"string\",\n      \"status\": \"string\"\n    },\n    {\n      \"id\": \"string\",\n      \"orderId\": \"string\",\n      \"carrier\": \"string\",\n      \"trackingNumber\": \"string\",\n      \"status\": \"string\"\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://api.ingrammicro.com/resellers/v6",
+      "key": "baseUrl"
+    }
+  ],
+  "info": {
+    "_postman_id": "e5e3f79c-6f28-4684-9281-78c7bd44623e",
+    "name": "Ingram Micro Reseller Catalog Shipments API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "The Ingram Micro Reseller API provides REST API access to product catalog, pricing, discounts, stock levels, and order management for IT resellers.\n\nContact Support:\n Name: Ingram Micro",
+      "type": "text/plain"
+    }
+  }
+}

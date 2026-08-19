@@ -1,0 +1,102 @@
+{
+  "item": [
+    {
+      "id": "2de8f094-e461-4e07-8943-bcc8ed68c559",
+      "name": "Inventory",
+      "description": {
+        "content": "Inventory management operations",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "ddbeda89-c0a8-4d63-9158-be2fa15b488a",
+          "name": "Get Inventory",
+          "request": {
+            "name": "Get Inventory",
+            "description": {
+              "content": "Retrieve inventory levels across Ingram Micro warehouses.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "inventory"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "25f2f072-9d13-4f29-ab6b-2971630a4074",
+              "name": "Successful response",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "inventory"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"inventory\": [\n    {\n      \"partNumber\": \"string\",\n      \"warehouse\": \"string\",\n      \"quantity\": 2358,\n      \"lastUpdated\": \"1968-10-01T03:28:18.257Z\"\n    },\n    {\n      \"partNumber\": \"string\",\n      \"warehouse\": \"string\",\n      \"quantity\": 6948,\n      \"lastUpdated\": \"1948-01-31T17:36:10.562Z\"\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://api.ingrammicro.com/resellers/v6",
+      "key": "baseUrl"
+    }
+  ],
+  "info": {
+    "_postman_id": "3e494f44-86ce-43b6-8767-361890a1af68",
+    "name": "Ingram Micro Reseller Catalog Inventory API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "The Ingram Micro Reseller API provides REST API access to product catalog, pricing, discounts, stock levels, and order management for IT resellers.\n\nContact Support:\n Name: Ingram Micro",
+      "type": "text/plain"
+    }
+  }
+}

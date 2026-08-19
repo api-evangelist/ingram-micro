@@ -1,0 +1,29 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Ingram Micro Reseller Catalog Inventory API",
+    "version": "1.0.0"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Inventory",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Get Inventory",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.ingrammicro.com/resellers/v6/inventory"
+          },
+          "docs": "Retrieve inventory levels across Ingram Micro warehouses."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}
