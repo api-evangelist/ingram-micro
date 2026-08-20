@@ -61,6 +61,8 @@ apis:
   humanURL: https://developer.ingrammicro.com/reseller/api-documentation/United_States
   baseURL: https://api.ingrammicro.com
   tags:
+  - Order
+  tags_raw:
   - Orders
   properties:
   - type: OpenAPI
