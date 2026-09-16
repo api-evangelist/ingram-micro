@@ -26,18 +26,20 @@ accessModel:
   method: derived
 image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/icons/ingram-micro.png
 tags:
-  - Fortune 100
+- Fortune 100
 url: https://raw.githubusercontent.com/api-evangelist/ingram-micro/refs/heads/main/apis.yml
-modified: '2026-05-19'
+modified: '2026-09-16'
 common:
-  - type: AgenticAccess
-    url: agentic-access/ingram-micro-agentic-access.yml
-  - type: DomainSecurity
-    url: security/ingram-micro-domain-security.yml
-  - type: GitHubOrganization
-    url: https://github.com/ingrammicro
-  - type: LinkedIn
-    url: https://www.linkedin.com/company/ingram-micro
+- type: Website
+  url: https://ingrammicro.com
+- type: AgenticAccess
+  url: agentic-access/ingram-micro-agentic-access.yml
+- type: DomainSecurity
+  url: security/ingram-micro-domain-security.yml
+- type: GitHubOrganization
+  url: https://github.com/ingrammicro
+- type: LinkedIn
+  url: https://www.linkedin.com/company/ingram-micro
 apis:
 - aid: ingram-micro:ingram-micro-catalog-api
   name: ingram-micro Catalog API
