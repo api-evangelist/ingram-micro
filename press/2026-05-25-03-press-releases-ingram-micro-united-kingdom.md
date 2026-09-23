@@ -1,7 +1,9 @@
 ---
 title: Press Releases | Ingram Micro United Kingdom
 url: https://uk.ingrammicro.eu/imagine-next-hub/press-releases
-date: '2026-05-25'
+published: ''
+date_basis: harvested
+harvested: '2026-05-25'
 query: '"Ingram Micro" press release artificial intelligence'
 position: 3
 source: serpapi-google

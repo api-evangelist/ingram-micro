@@ -1,22 +1,31 @@
 {
   "provider": "ingram-micro",
   "sources": [
-    "ingram-micro-catalog-api-openapi.yml",
-    "ingram-micro-inventory-api-openapi.yml",
-    "ingram-micro-orders-api-openapi.yml",
-    "ingram-micro-pricing-api-openapi.yml",
-    "ingram-micro-shipments-api-openapi.yml"
+    "_original/ingram-micro-reseller-api-openapi.yml",
+    "_original/ingram-micro-vendor-api-openapi.yml"
   ],
   "outputs": [
     "ingram-micro-catalog-api-openapi.yml",
-    "ingram-micro-inventory-api-openapi.yml",
     "ingram-micro-orders-api-openapi.yml",
     "ingram-micro-pricing-api-openapi.yml",
+    "ingram-micro-inventory-api-openapi.yml",
     "ingram-micro-shipments-api-openapi.yml"
   ],
   "archived": [],
   "errors": [],
   "warnings": [],
-  "notes": [],
-  "skipped": []
+  "notes": [
+    "sourced from openapi/_original/ (2 archived document(s)); previously refined output at the top level was skipped rather than re-split",
+    "ingram-micro-reseller-api-openapi.yml: upgraded openapi 3.1.0 -> OpenAPI 3.2.0",
+    "ingram-micro-vendor-api-openapi.yml: upgraded openapi 3.1.0 -> OpenAPI 3.2.0",
+    "tag 'Orders' spans 2 source specs (ingram-micro-reseller-api-openapi.yml, ingram-micro-vendor-api-openapi.yml): per-path servers applied",
+    "apis.yml register: already-registered"
+  ],
+  "skipped": [
+    "ingram-micro-catalog-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "ingram-micro-inventory-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "ingram-micro-orders-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "ingram-micro-pricing-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "ingram-micro-shipments-api-openapi.yml: previously refined output, superseded by openapi/_original/"
+  ]
 }

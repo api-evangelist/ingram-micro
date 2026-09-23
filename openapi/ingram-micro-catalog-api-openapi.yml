@@ -1,4 +1,4 @@
-openapi: 3.1.0
+openapi: 3.2.0
 info:
   title: Ingram Micro Reseller Catalog API
   description: The Ingram Micro Reseller API provides REST API access to product catalog, pricing, discounts, stock levels, and order management for IT resellers.
@@ -62,15 +62,6 @@ paths:
                 $ref: '#/components/schemas/Product'
 components:
   schemas:
-    ProductCatalog:
-      type: object
-      properties:
-        products:
-          type: array
-          items:
-            $ref: '#/components/schemas/Product'
-        totalCount:
-          type: integer
     Product:
       type: object
       properties:
@@ -93,3 +84,12 @@ components:
               type: boolean
             totalAvailability:
               type: integer
+    ProductCatalog:
+      type: object
+      properties:
+        products:
+          type: array
+          items:
+            $ref: '#/components/schemas/Product'
+        totalCount:
+          type: integer

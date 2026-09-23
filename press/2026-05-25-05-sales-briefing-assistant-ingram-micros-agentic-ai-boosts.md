@@ -1,7 +1,9 @@
 ---
 title: 'Sales Briefing Assistant: Ingram Micro''s Agentic AI Boosts ...'
 url: https://www.channelpronetwork.com/2025/11/03/how-msps-benefit-from-sales-briefing-assistant-ingram-micros-new-agentic-ai/
-date: '2026-05-25'
+published: '2025-11-03'
+date_basis: url-derived
+harvested: '2026-05-25'
 query: '"Ingram Micro" press release artificial intelligence'
 position: 5
 source: serpapi-google
