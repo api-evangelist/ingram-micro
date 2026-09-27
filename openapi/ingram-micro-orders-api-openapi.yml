@@ -76,27 +76,6 @@ paths:
       description: Production
 components:
   schemas:
-    Order:
-      type: object
-      properties:
-        orderId:
-          type: string
-        status:
-          type: string
-        lines:
-          type: array
-          items:
-            type: object
-            properties:
-              ingramPartNumber:
-                type: string
-              quantity:
-                type: integer
-              unitPrice:
-                type: number
-        createdAt:
-          type: string
-          format: date-time
     OrderRequest:
       type: object
       properties:
@@ -124,6 +103,27 @@ components:
                 type: string
               quantity:
                 type: integer
+    Order:
+      type: object
+      properties:
+        orderId:
+          type: string
+        status:
+          type: string
+        lines:
+          type: array
+          items:
+            type: object
+            properties:
+              ingramPartNumber:
+                type: string
+              quantity:
+                type: integer
+              unitPrice:
+                type: number
+        createdAt:
+          type: string
+          format: date-time
     VendorOrderList:
       type: object
       properties:
