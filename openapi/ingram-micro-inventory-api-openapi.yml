@@ -29,6 +29,13 @@ paths:
                 $ref: '#/components/schemas/InventoryList'
 components:
   schemas:
+    InventoryList:
+      type: object
+      properties:
+        inventory:
+          type: array
+          items:
+            $ref: '#/components/schemas/InventoryItem'
     InventoryItem:
       type: object
       properties:
@@ -41,10 +48,3 @@ components:
         lastUpdated:
           type: string
           format: date-time
-    InventoryList:
-      type: object
-      properties:
-        inventory:
-          type: array
-          items:
-            $ref: '#/components/schemas/InventoryItem'
