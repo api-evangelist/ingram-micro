@@ -30,6 +30,9 @@ tags:
 url: https://raw.githubusercontent.com/api-evangelist/ingram-micro/refs/heads/main/apis.yml
 modified: '2026-09-16'
 common:
+- type: CapabilityMap
+  url: capabilities/ingram-micro-capability-edges.yml
+  name: Ingram Micro Business Capability Map
 - type: Website
   url: https://ingrammicro.com
 - type: AgenticAccess

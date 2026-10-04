@@ -1,0 +1,36 @@
+slug: ingram-micro
+provider: Ingram Micro
+generated_by: planning/capability-mapping/scripts/classify_capabilities.py
+model: claude-opus-5
+frame:
+- Software & Technology
+min_confidence: 0.7
+capability_model:
+  source: https://github.com/vincentmakes/turbo-ea-capabilities
+  license: CC-BY-4.0
+  attribution: Turbo EA Capabilities by Vincent Verdet — Turbo EA, https://github.com/vincentmakes/turbo-ea-capabilities,
+    CC BY 4.0
+  notice: NOTICE
+edge_count: 2
+edges:
+- tag: Inventory
+  spec_file: ingram-micro-inventory-api-openapi.yml
+  capability_id: BC-530.10
+  capability_id_l1: BC-530
+  capability_name: Stock Level Management
+  confidence: 0.75
+  evidence: GET /inventory 'Get Inventory' with schemas InventoryList, InventoryItem; 'vendors to manage
+    inventory, orders, and supply chain operations'
+  reason: The operation exposes stock availability per item across the distribution network, which is
+    stock-level visibility within inventory management. Slight ambiguity over whether it is stock level
+    vs. allocation, so L2 given at moderate confidence.
+- tag: Shipments
+  spec_file: ingram-micro-shipments-api-openapi.yml
+  capability_id: BC-520.50
+  capability_id_l1: BC-520
+  capability_name: Logistics Operations Management
+  confidence: 0.7
+  evidence: GET /shipments 'Get Shipments' with ShipmentList, Shipment schemas; 'manage inventory, orders,
+    and supply chain operations through Ingram Micro's distribution network'
+  reason: Shipment visibility within a distribution network is logistics execution under supply chain
+    management.
