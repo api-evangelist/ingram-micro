@@ -35,6 +35,16 @@ paths:
                 $ref: '#/components/schemas/PricingResponse'
 components:
   schemas:
+    PricingRequest:
+      type: object
+      properties:
+        products:
+          type: array
+          items:
+            type: object
+            properties:
+              ingramPartNumber:
+                type: string
     PricingResponse:
       type: object
       properties:
@@ -51,13 +61,3 @@ components:
                 type: number
               availability:
                 type: boolean
-    PricingRequest:
-      type: object
-      properties:
-        products:
-          type: array
-          items:
-            type: object
-            properties:
-              ingramPartNumber:
-                type: string
