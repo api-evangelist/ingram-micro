@@ -30,6 +30,12 @@ tags:
 url: https://raw.githubusercontent.com/api-evangelist/ingram-micro/refs/heads/main/apis.yml
 modified: '2026-09-16'
 common:
+- type: Plans
+  url: plans/ingram-micro-plans-pricing.yml
+- type: RateLimits
+  url: rate-limits/ingram-micro-rate-limits.yml
+- type: FinOps
+  url: finops/ingram-micro-finops.yml
 - type: CapabilityMap
   url: capabilities/ingram-micro-capability-edges.yml
   name: Ingram Micro Business Capability Map
