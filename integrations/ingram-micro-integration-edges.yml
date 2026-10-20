@@ -2,6 +2,7 @@ generated: '2026-10-13'
 method: searched
 checked:
 - https://azuremarketplace.microsoft.com/
+- https://listings.pcisecuritystandards.org/assessors_and_solutions
 marketplace_apps: []
 edges:
 - partner_name: Microsoft Azure Marketplace
@@ -19,3 +20,37 @@ edges:
   seller_name: Ingram Micro India Private Limited
   detected_by: sweep-cloud-marketplaces.py
   detected: '2026-10-13'
+- partner_name: PCI Security Standards Council (program listings)
+  partner: null
+  partner_match: register
+  type: register
+  channel: standard-directory
+  relationship: standard-participant
+  direction: partner-built
+  evidence: https://www.pcisecuritystandards.org/assessors_and_solutions/point_to_point_encryption_solutions/
+  category: Payment security validation
+  contract_reference:
+    register: PCI SSC program listings (listings.pcisecuritystandards.org / pcisecuritystandards.org)
+    spec_file: null
+    standard: PCI SSC
+    role: pci-validated-vendor
+    registered_name: Ingram Micro, Inc
+    website: https://www.ingrammicro.com
+    matched_domain: ingrammicro.com
+    matched_by: domain
+    identity_source: the vendor website on the PCI SSC listing (no lookup)
+    certified_products:
+    - product: PCI P2PE Component
+      lapsed: true
+      latest_expiry: '2027-12-04'
+      listed: 1
+    signal_note: one certified_products entry per PCI SSC program (Secure Software, PA-DSS, P2PE solution / component
+      / application, 3DS SDK, SPoC, CPoC, MPoC, PTS device, Secure SLC); lapsed = every listed product in that program
+      is past its expiry / reassessment date or marked expired; `listed` is context only. List Access Agreement
+      accepted on Kin's instruction 2026-10-20
+    detected_by: sweep-compliance-assurance.py
+    detected: '2026-10-20'
+  detected_by: sweep-compliance-assurance.py
+  first_seen: '2026-10-20'
+source:
+- https://listings.pcisecuritystandards.org/assessors_and_solutions
