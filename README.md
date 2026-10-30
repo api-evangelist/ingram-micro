@@ -1,4 +1,4 @@
-# ingram-micro (ingram-micro)
+# Ingram Micro
 
 <!-- API-EVANGELIST-PROVENANCE:BEGIN -->
 > ### About this repository
@@ -66,58 +66,122 @@
 
 © 2025 - All Rights Reserved. Ingram Micro Inc. - Privacy Policy | Terms of Use.
 
-**APIs.json:** [https://raw.githubusercontent.com/api-evangelist/ingram-micro/refs/heads/main/apis.yml](https://raw.githubusercontent.com/api-evangelist/ingram-micro/refs/heads/main/apis.yml)
+**Areas:** Fortune 100
 
-## Timestamps
+## Ingram Micro on APIs.io
 
-- **Modified:** 2026-05-19
+Everything profiled for Ingram Micro is published on APIs.io rather than in this repository. Start at the provider page — **[apis.io/providers/ingram-micro/](https://apis.io/providers/ingram-micro/)** — or go straight to one of the APIs or properties below.
 
-## APIs
+### APIs (5)
 
-### Ingram Micro Reseller API
+- [ingram-micro Catalog API](https://apis.io/apis/ingram-micro/ingram-micro-catalog-api/) — Product catalog operations
+- [ingram-micro Inventory API](https://apis.io/apis/ingram-micro/ingram-micro-inventory-api/) — Inventory management operations
+- [ingram-micro Orders API](https://apis.io/apis/ingram-micro/ingram-micro-orders-api/) — Order management operations
+- [ingram-micro Pricing API](https://apis.io/apis/ingram-micro/ingram-micro-pricing-api/) — Pricing and availability operations
+- [ingram-micro Shipments API](https://apis.io/apis/ingram-micro/ingram-micro-shipments-api/) — Shipment tracking operations
 
-The Ingram Micro Reseller API provides REST API access to product catalog, pricing, discounts, stock levels, order management, and order status for IT resellers. It uses OAuth 2.0 authentication and provides a sandbox environment for testing.
+### Published properties
 
-- **Human URL:** [https://developer.ingrammicro.com/reseller/api-documentation/United_States](https://developer.ingrammicro.com/reseller/api-documentation/United_States)
-- **Base URL:** `https://api.ingrammicro.com`
+Each property below is a page on APIs.io carrying the machine-readable artifact and what it says.
 
-#### Tags
+#### Agentic access (1)
 
-- Catalog
-- IT Distribution
-- Orders
-- Pricing
-- Reseller
+Which operations an agent can call, which act, and which need a human in the loop.
 
-#### Properties
+- [Ingram Micro Agentic Access](https://apis.io/agentic-access/ingram-micro/ingram-micro-agentic-access/)
 
-- [Documentation](https://developer.ingrammicro.com/reseller/api-documentation/United_States)
-- [OpenAPI](openapi/ingram-micro-reseller-api-openapi.yml) — [OpenAPI Specification](https://spec.openapis.org/oas/latest.html)
-- [Postman Collection](collections/ingram-micro-reseller-api.postman_collection.json) — [Postman Collection 2.1](https://schema.getpostman.com/json/collection/v2.1.0/collection.json)
-- [Open Collection](collections/ingram-micro-reseller-api.opencollection.json) — [Open Collection 1.0](https://schema.opencollection.com/opencollection/v1.0.0.json)
+#### Collections (7)
 
-### Ingram Micro Vendor API
+Postman and Open Collection request collections.
 
-The Ingram Micro Vendor API provides REST API access for technology vendors to scale their business through Ingram Micro's distribution network, with access to inventory management, order processing, and supply chain integration.
+- [Ingram Micro Reseller Catalog API](https://apis.io/collections/ingram-micro/open-ingram-micro-catalog-api/)
+- [Ingram Micro Reseller Catalog Inventory API](https://apis.io/collections/ingram-micro/open-ingram-micro-inventory-api/)
+- [Ingram Micro Reseller Catalog Orders API](https://apis.io/collections/ingram-micro/open-ingram-micro-orders-api/)
+- [Ingram Micro Reseller Catalog Pricing API](https://apis.io/collections/ingram-micro/open-ingram-micro-pricing-api/)
+- [Ingram Micro Reseller API](https://apis.io/collections/ingram-micro/open-ingram-micro-reseller-api/)
+- [Ingram Micro Reseller Catalog Shipments API](https://apis.io/collections/ingram-micro/open-ingram-micro-shipments-api/)
+- [Ingram Micro Vendor API](https://apis.io/collections/ingram-micro/open-ingram-micro-vendor-api/)
 
-- **Human URL:** [https://developer.ingrammicro.com/vendor/api-documentation](https://developer.ingrammicro.com/vendor/api-documentation)
-- **Base URL:** `https://api.ingrammicro.com`
+#### Security (1)
 
-#### Tags
+Authentication, trust centre, and vulnerability disclosure.
 
-- Inventory
-- IT Distribution
-- Supply Chain
-- Vendor
+- [Ingram Micro Domain Security](https://apis.io/security/ingram-micro/ingram-micro-domain-security/)
 
-#### Properties
+#### Plans and pricing (1)
 
-- [Documentation](https://developer.ingrammicro.com/vendor/api-documentation)
-- [OpenAPI](openapi/ingram-micro-vendor-api-openapi.yml) — [OpenAPI Specification](https://spec.openapis.org/oas/latest.html)
-- [Postman Collection](collections/ingram-micro-vendor-api.postman_collection.json) — [Postman Collection 2.1](https://schema.getpostman.com/json/collection/v2.1.0/collection.json)
-- [Open Collection](collections/ingram-micro-vendor-api.opencollection.json) — [Open Collection 1.0](https://schema.opencollection.com/opencollection/v1.0.0.json)
+Published plans, tiers and prices.
 
-## Common Properties
+- [Ingram Micro Plans Pricing](https://apis.io/plans/ingram-micro/ingram-micro-plans-pricing/)
 
-- [GitHub Organization](https://github.com/ingrammicro)
-- [LinkedIn](https://www.linkedin.com/company/ingram-micro)
+#### Rate limits (1)
+
+Published request limits.
+
+- [Ingram Micro Rate Limits](https://apis.io/rate-limits/ingram-micro/ingram-micro-rate-limits/)
+
+#### FinOps (1)
+
+What the API costs to run, by operation.
+
+- [Ingram Micro Finops](https://apis.io/finops/ingram-micro/ingram-micro-finops/)
+
+## Where to find this API
+
+Links to the company's own pages. This repository publishes no copy of their specifications — the canonical document is theirs and lives at the URLs below.
+
+- [Website](https://ingrammicro.com)
+- [GitHub](https://github.com/ingrammicro)
+
+## API Evangelist rating
+
+**Kin Score 18.2** — emerging · rubric 0.24.0 · scored 2026-10-17
+
+| Facet | Score |
+|---|---|
+| Discoverability | 42.9 |
+| Contract quality | 44.7 |
+| Contract governance | 0.0 |
+| Operational transparency | 10.5 |
+| Developer ergonomics | 9.5 |
+| Access clarity | 7.9 |
+
+**Agent readiness 15.4** — agent-aware
+
+| Agent-readiness dimension | Result |
+|---|---|
+| Spec Presence | yes |
+| Agentic Access | derived (partial credit) |
+| Reversibility Documented | — |
+| MCP Server | — |
+| Auth Clarity | — |
+| Idempotency | — |
+| Error Semantics | — |
+| OpenAPI Examples | — |
+| Rate Limit Signal | derived (partial credit) |
+| Event Surface Described | — |
+| Agent Skills | — |
+| Well Known Catalog | — |
+| Consent Identity | — |
+| Agent Card | — |
+| Dry Run Mode | — |
+| Delegated Identity | — |
+| Protected Resource Metadata | — |
+| Dynamic Client Registration | — |
+| Agentic Commerce | — |
+
+**Regulatory alignment 5.9** — Horizontal (data, software, accessibility, platform)
+
+The rubric is published at [github.com/api-evangelist/kin-score](https://github.com/api-evangelist/kin-score). The per-check breakdown behind these numbers — which checks were earned, partial or missed — along with score history and how this provider compares to its peers, is available at [apis.io/providers/ingram-micro/](https://apis.io/providers/ingram-micro/).
+
+## How this profile is made
+
+API Evangelist profiles a company's public API surface the way a developer would find it: the website, developer portal and documentation, the specifications it publishes, its public repositories, and its pricing, status and changelog pages. From that it derives the properties above — contracts split per API, workflows, schemas, collections, governance rules, plans and rate limits — and scores them against the published [Kin Score rubric](https://github.com/api-evangelist/kin-score).
+
+The artifacts are published on [APIs.io](https://apis.io), not in this repository. This repository is the public record for Ingram Micro: the place to say something is wrong, missing or out of date, and to ask for a re-score or a removal.
+
+## Open an issue
+
+- **Something about this listing** — a wrong description, a missing API, a stale artifact or a question about the rating: [open an issue on this repository](https://github.com/api-evangelist/ingram-micro/issues/new).
+- **A new API, or one that is not in the catalog yet** — [submit it on APIs.io](https://apis.io/add/).
+- **Anything else** — [the APIs.io inbox](https://github.com/api-search/inbox/issues/new) or [info@apievangelist.com](mailto:info@apievangelist.com).
